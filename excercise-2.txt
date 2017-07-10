@@ -1,0 +1,21 @@
+
+mysql> INSERT INTO Account (email, password, createdOn) VALUES ('abc@gmail.com','123pass', NOW());                                                   
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO AddressBook (accountId, name, createdOn)
+    -> VALUES (1, 'ABC', NOW());
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO Entry (addressBookId, firstName, lastName, birthday, type, subtype, contentLineOne) 
+    -> VALUES (1, 'ABC', 'EFG', '1978-05-28 23:01:30', 'home', 'phone', '3 Place Ville Marie');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> 
+mysql> INSERT INTO Entry (addressBookId, firstName, lastName, birthday, type, subtype, contentLineOne) 
+    -> VALUES (1, 'ABC', 'EFG', '1978-05-28 23:01:30', 'work', 'email', '3 Place Ville Marie');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> 
+mysql> INSERT INTO Entry (addressBookId, firstName, lastName, birthday, type, subtype, contentLineOne, contentLineTwo) 
+    -> VALUES (1, 'ABC', 'EFG', '1978-05-28 23:01:30', 'other', 'phone', '2 Place Ville Marie', 'Canada');
+Query OK, 1 row affected (0.00 sec)
