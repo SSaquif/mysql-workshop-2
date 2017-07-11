@@ -1,0 +1,2 @@
+ssaquif:~/workspace/decodeMTL/mySQL/mysql-workshop-2 (master) $ cat data/*.sql > all_files.sql //cancatnate all into one file
+ssaquif:~/workspace/decodeMTL/mySQL/mysql-workshop-2 (master) $ mysql -ussaquif -hlocalhost decodemtl_addressbook_import < all_files.sql

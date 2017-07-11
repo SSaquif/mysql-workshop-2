@@ -1,0 +1,35 @@
+Database changed
+mysql> UPDATE Account Set password = '234pass' WHERE id = 1;                                                                                         
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE AddressBook Set name = 'Sadnan'
+    -> WHERE accountId = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Entry;
++----+---------------+-----------+----------+---------------------+-------+---------+---------------------+----------------+------------------+-----------------+-----------------+
+| id | addressBookId | firstName | lastName | birthday            | type  | subtype | contentLineOne      | contentLineTwo | contentLineThree | contentLineFour | contentLineFive |
++----+---------------+-----------+----------+---------------------+-------+---------+---------------------+----------------+------------------+-----------------+-----------------+
+|  1 |             1 | ABC       | EFG      | 1978-05-28 23:01:30 | home  | phone   | 3 Place Ville Marie | NULL           | NULL             | NULL            | NULL            |
+|  2 |             1 | ABC       | EFG      | 1978-05-28 23:01:30 | work  | email   | 3 Place Ville Marie | NULL           | NULL             | NULL            | NULL            |
+|  3 |             1 | ABC       | EFG      | 1978-05-28 23:01:30 | other | phone   | 2 Place Ville Marie | Canada         | NULL             | NULL            | NULL            |
++----+---------------+-----------+----------+---------------------+-------+---------+---------------------+----------------+------------------+-----------------+-----------------+
+3 rows in set (0.00 sec)
+
+mysql> UPDATE Entry Set name = 'Sadnan'
+    -> WHERE addressBookId = 1;
+ERROR 1054 (42S22): Unknown column 'name' in 'field list'
+mysql> UPDATE Entry Set firstName = 'Sadnan' WHERE addressBookId = 1;                                                                                
+Query OK, 3 rows affected (0.02 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> Select * from Entry;
++----+---------------+-----------+----------+---------------------+-------+---------+---------------------+----------------+------------------+-----------------+-----------------+
+| id | addressBookId | firstName | lastName | birthday            | type  | subtype | contentLineOne      | contentLineTwo | contentLineThree | contentLineFour | contentLineFive |
++----+---------------+-----------+----------+---------------------+-------+---------+---------------------+----------------+------------------+-----------------+-----------------+
+|  1 |             1 | Sadnan    | EFG      | 1978-05-28 23:01:30 | home  | phone   | 3 Place Ville Marie | NULL           | NULL             | NULL            | NULL            |
+|  2 |             1 | Sadnan    | EFG      | 1978-05-28 23:01:30 | work  | email   | 3 Place Ville Marie | NULL           | NULL             | NULL            | NULL            |
+|  3 |             1 | Sadnan    | EFG      | 1978-05-28 23:01:30 | other | phone   | 2 Place Ville Marie | Canada         | NULL             | NULL            | NULL            |
++----+---------------+-----------+----------+---------------------+-------+---------+---------------------+----------------+------------------+-----------------+-----------------+

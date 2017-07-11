@@ -1,0 +1,17 @@
+mysql> Select * from Entry;
++----+---------------+-----------+----------+---------------------+-------+---------+---------------------+----------------+------------------+-----------------+-----------------+
+| id | addressBookId | firstName | lastName | birthday            | type  | subtype | contentLineOne      | contentLineTwo | contentLineThree | contentLineFour | contentLineFive |
++----+---------------+-----------+----------+---------------------+-------+---------+---------------------+----------------+------------------+-----------------+-----------------+
+|  1 |             1 | Sadnan    | EFG      | 1978-05-28 23:01:30 | home  | phone   | 3 Place Ville Marie | NULL           | NULL             | NULL            | NULL            |
+|  2 |             1 | Sadnan    | EFG      | 1978-05-28 23:01:30 | work  | email   | 3 Place Ville Marie | NULL           | NULL             | NULL            | NULL            |
+|  3 |             1 | Sadnan    | EFG      | 1978-05-28 23:01:30 | other | phone   | 2 Place Ville Marie | Canada         | NULL             | NULL            | NULL            |
++----+---------------+-----------+----------+---------------------+-------+---------+---------------------+----------------+------------------+-----------------+-----------------+
+3 rows in set (0.00 sec)
+
+mysql> TRUNCATE TABLE Entry;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> sselect * from Entry;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sselect * from Entry' at line 1
+mysql> select * from Entry;
+Empty set (0.00 sec)
